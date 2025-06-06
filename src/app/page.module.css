@@ -1,13 +1,4 @@
-:root {
-  --background: linear-gradient(135deg, #0a0f1c 0%, #1a2236 100%);
-  --foreground: #fff;
-}
-
-body, html {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: 'Geist', 'Inter', Arial, sans-serif;
-}
+/* Removed :root and body, html selectors. Only local classes remain. */
 
 .bg {
   min-height: 100vh;

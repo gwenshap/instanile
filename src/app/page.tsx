@@ -22,7 +22,7 @@ export default function Home() {
       } else {
         setError(data.error || "No URI returned");
       }
-    } catch (e) {
+    } catch {
       setError("Failed to create database");
     } finally {
       setLoading(false);
@@ -38,9 +38,9 @@ export default function Home() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "var(--background)" }}>
+    <div className={styles.bg}>
       <div className={styles.card}>
-        <div className={styles.title}>Create a Nile Database</div>
+        <div className={styles.title}>Instant Postgres Database</div>
         <button
           className={styles.nileBtn}
           onClick={handleCreateDb}
@@ -64,7 +64,7 @@ export default function Home() {
           </div>
         )}
         <div style={{ fontSize: 13, color: "#888", marginTop: 18, textAlign: "center" }}>
-          You'll get a Postgres URI you can use instantly.<br />
+          You&apos;ll get a Postgres URI you can use instantly.<br />
           <span style={{ fontSize: 12 }}>Powered by <a href="https://thenile.dev" target="_blank" rel="noopener noreferrer" style={{ color: "#06b6d4", textDecoration: "none" }}>Nile</a></span>
         </div>
       </div>

@@ -83,8 +83,9 @@ export async function POST(req: NextRequest) {
     const connStr = `postgres://${cred.id}:${cred.password}@${region}.db.thenile.dev:5432/${cred.database.name}`;
     console.log('Connection string:', connStr);
     return NextResponse.json({ uri: connStr });
-  } catch (e: any) {
+  } catch (e) {
+    const message = e instanceof Error ? e.message : String(e);
     console.error('Unexpected error:', e);
-    return NextResponse.json({ error: e.message || 'Unknown error' }, { status: 500 });
+    return NextResponse.json({ error: message || 'Unknown error' }, { status: 500 });
   }
 } 

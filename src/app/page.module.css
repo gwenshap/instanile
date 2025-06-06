@@ -1,3 +1,23 @@
+:root {
+  --background: linear-gradient(135deg, #0a0f1c 0%, #1a2236 100%);
+  --foreground: #fff;
+}
+
+body, html {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Geist', 'Inter', Arial, sans-serif;
+}
+
+.bg {
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .page {
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
@@ -168,72 +188,86 @@ a.secondary {
 }
 
 .card {
-  background: var(--background);
-  box-shadow: 0 4px 32px rgba(0,0,0,0.08), 0 1.5px 4px rgba(0,0,0,0.04);
-  border-radius: 18px;
-  padding: 40px 32px 32px 32px;
-  max-width: 420px;
+  background: rgba(24, 32, 54, 0.72);
+  box-shadow: 0 8px 40px 0 rgba(0,0,0,0.25), 0 1.5px 4px rgba(0,0,0,0.04);
+  border-radius: 22px;
+  padding: 44px 32px 36px 32px;
+  max-width: 520px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(80, 180, 255, 0.18);
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 2.1rem;
   font-weight: 700;
   margin-bottom: 8px;
   text-align: center;
+  color: #fff;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
 }
 
 .nileBtn {
-  background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+  background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 50%, #a78bfa 100%);
   color: #fff;
   border: none;
-  border-radius: 8px;
-  padding: 14px 36px;
-  font-size: 1.1rem;
+  border-radius: 12px;
+  padding: 15px 38px;
+  font-size: 1.15rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 8px rgba(59,130,246,0.08);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  box-shadow: 0 2px 16px 0 rgba(59,130,246,0.18);
   margin-bottom: 8px;
+  outline: none;
+  border: 1.5px solid rgba(80, 180, 255, 0.18);
 }
 .nileBtn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 .nileBtn:hover:not(:disabled) {
-  background: linear-gradient(90deg, #2563eb 0%, #0ea5e9 100%);
+  background: linear-gradient(90deg, #2563eb 0%, #0ea5e9 50%, #a78bfa 100%);
+  box-shadow: 0 4px 24px 0 #06b6d4aa;
+  transform: translateY(-2px) scale(1.03);
 }
 
 .codeBlock {
-  background: #f4f4f4;
-  color: #222;
+  background: rgba(30, 41, 59, 0.85);
+  color: #aeefff;
   font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
   padding: 10px 16px;
   border-radius: 8px;
   font-size: 1rem;
   word-break: break-all;
   margin-right: 8px;
+  border: 1.2px solid #06b6d4;
+  box-shadow: 0 1px 8px 0 #06b6d455;
 }
 .copyBtn {
-  background: #e0e7ef;
+  background: linear-gradient(90deg, #0ea5e9 0%, #a78bfa 100%);
+  color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 7px;
   padding: 7px 14px;
-  font-size: 0.95rem;
+  font-size: 0.97rem;
   cursor: pointer;
   margin-left: 2px;
-  transition: background 0.15s;
+  transition: background 0.15s, box-shadow 0.15s;
+  box-shadow: 0 1px 6px 0 #0ea5e955;
 }
 .copyBtn:hover {
-  background: #bae6fd;
+  background: linear-gradient(90deg, #3b82f6 0%, #a78bfa 100%);
+  box-shadow: 0 2px 12px 0 #a78bfa55;
 }
 
 .spinner {
-  border: 3px solid #e0e7ef;
+  border: 3px solid #334155;
   border-top: 3px solid #06b6d4;
   border-radius: 50%;
   width: 24px;
@@ -253,6 +287,7 @@ a.secondary {
   }
   .title {
     font-size: 1.3rem;
+    white-space: normal;
   }
   .nileBtn {
     font-size: 1rem;
